@@ -1,0 +1,640 @@
+{
+  "contractName": "IBetaInterestModel",
+  "abi": [
+    {
+      "inputs": [],
+      "name": "initialRate",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "prevRate",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "totalAvailable",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "totalLoan",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "timePast",
+          "type": "uint256"
+        }
+      ],
+      "name": "getNextInterestRate",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.8.6+commit.11564f7e\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"prevRate\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"totalAvailable\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"totalLoan\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"timePast\",\"type\":\"uint256\"}],\"name\":\"getNextInterestRate\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"initialRate\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{\"getNextInterestRate(uint256,uint256,uint256,uint256)\":{\"details\":\"Returns the next interest rate for the market.\",\"params\":{\"prevRate\":\"The current interest rate.\",\"timePast\":\"The time past since last interest rate rebase in seconds.\",\"totalAvailable\":\"The current available liquidity.\",\"totalLoan\":\"The current outstanding loan.\"}},\"initialRate()\":{\"details\":\"Returns the initial interest rate per year (times 1e18).\"}},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/interfaces/IBetaInterestModel.sol\":\"IBetaInterestModel\"},\"evmVersion\":\"berlin\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":1},\"remappings\":[]},\"sources\":{\"project:/interfaces/IBetaInterestModel.sol\":{\"keccak256\":\"0xd12b5631560716e51e70f55a2c18c17d072847741b35d0c408f704b22f5dbfc0\",\"license\":\"BUSL-1.1\",\"urls\":[\"bzz-raw://2fab087677a09fd311b37c1c4348cd64ab1b368548d76e37cfc900507472d379\",\"dweb:/ipfs/QmU3RDutNDtFL3GwCunxNiZRs6BHFjhYfyxZTdWHEhiHqt\"]}},\"version\":1}",
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "immutableReferences": {},
+  "generatedSources": [],
+  "deployedGeneratedSources": [],
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "// SPDX-License-Identifier: BUSL-1.1\r\npragma solidity 0.8.6;\r\n\r\ninterface IBetaInterestModel {\r\n  /// @dev Returns the initial interest rate per year (times 1e18).\r\n  function initialRate() external view returns (uint);\r\n\r\n  /// @dev Returns the next interest rate for the market.\r\n  /// @param prevRate The current interest rate.\r\n  /// @param totalAvailable The current available liquidity.\r\n  /// @param totalLoan The current outstanding loan.\r\n  /// @param timePast The time past since last interest rate rebase in seconds.\r\n  function getNextInterestRate(\r\n    uint prevRate,\r\n    uint totalAvailable,\r\n    uint totalLoan,\r\n    uint timePast\r\n  ) external view returns (uint);\r\n}\r\n",
+  "sourcePath": "C:\\Users\\HP\\PoolContract\\interfaces\\IBetaInterestModel.sol",
+  "ast": {
+    "absolutePath": "project:/interfaces/IBetaInterestModel.sol",
+    "exportedSymbols": {
+      "IBetaInterestModel": [
+        8743
+      ]
+    },
+    "id": 8744,
+    "license": "BUSL-1.1",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 8722,
+        "literals": [
+          "solidity",
+          "0.8",
+          ".6"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "38:22:37"
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "fullyImplemented": false,
+        "id": 8743,
+        "linearizedBaseContracts": [
+          8743
+        ],
+        "name": "IBetaInterestModel",
+        "nameLocation": "74:18:37",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "documentation": {
+              "id": 8723,
+              "nodeType": "StructuredDocumentation",
+              "src": "98:65:37",
+              "text": "@dev Returns the initial interest rate per year (times 1e18)."
+            },
+            "functionSelector": "9e51051f",
+            "id": 8728,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "initialRate",
+            "nameLocation": "176:11:37",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 8724,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "187:2:37"
+            },
+            "returnParameters": {
+              "id": 8727,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 8726,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 8728,
+                  "src": "213:4:37",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 8725,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "213:4:37",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "212:6:37"
+            },
+            "scope": 8743,
+            "src": "167:52:37",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "documentation": {
+              "id": 8729,
+              "nodeType": "StructuredDocumentation",
+              "src": "225:302:37",
+              "text": "@dev Returns the next interest rate for the market.\n @param prevRate The current interest rate.\n @param totalAvailable The current available liquidity.\n @param totalLoan The current outstanding loan.\n @param timePast The time past since last interest rate rebase in seconds."
+            },
+            "functionSelector": "fae7f00d",
+            "id": 8742,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getNextInterestRate",
+            "nameLocation": "540:19:37",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 8738,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 8731,
+                  "mutability": "mutable",
+                  "name": "prevRate",
+                  "nameLocation": "571:8:37",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 8742,
+                  "src": "566:13:37",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 8730,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "566:4:37",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 8733,
+                  "mutability": "mutable",
+                  "name": "totalAvailable",
+                  "nameLocation": "591:14:37",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 8742,
+                  "src": "586:19:37",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 8732,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "586:4:37",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 8735,
+                  "mutability": "mutable",
+                  "name": "totalLoan",
+                  "nameLocation": "617:9:37",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 8742,
+                  "src": "612:14:37",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 8734,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "612:4:37",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 8737,
+                  "mutability": "mutable",
+                  "name": "timePast",
+                  "nameLocation": "638:8:37",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 8742,
+                  "src": "633:13:37",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 8736,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "633:4:37",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "559:92:37"
+            },
+            "returnParameters": {
+              "id": 8741,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 8740,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 8742,
+                  "src": "675:4:37",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 8739,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "675:4:37",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "674:6:37"
+            },
+            "scope": 8743,
+            "src": "531:150:37",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "scope": 8744,
+        "src": "64:620:37",
+        "usedErrors": []
+      }
+    ],
+    "src": "38:648:37"
+  },
+  "legacyAST": {
+    "absolutePath": "project:/interfaces/IBetaInterestModel.sol",
+    "exportedSymbols": {
+      "IBetaInterestModel": [
+        8743
+      ]
+    },
+    "id": 8744,
+    "license": "BUSL-1.1",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 8722,
+        "literals": [
+          "solidity",
+          "0.8",
+          ".6"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "38:22:37"
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "fullyImplemented": false,
+        "id": 8743,
+        "linearizedBaseContracts": [
+          8743
+        ],
+        "name": "IBetaInterestModel",
+        "nameLocation": "74:18:37",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "documentation": {
+              "id": 8723,
+              "nodeType": "StructuredDocumentation",
+              "src": "98:65:37",
+              "text": "@dev Returns the initial interest rate per year (times 1e18)."
+            },
+            "functionSelector": "9e51051f",
+            "id": 8728,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "initialRate",
+            "nameLocation": "176:11:37",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 8724,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "187:2:37"
+            },
+            "returnParameters": {
+              "id": 8727,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 8726,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 8728,
+                  "src": "213:4:37",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 8725,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "213:4:37",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "212:6:37"
+            },
+            "scope": 8743,
+            "src": "167:52:37",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "documentation": {
+              "id": 8729,
+              "nodeType": "StructuredDocumentation",
+              "src": "225:302:37",
+              "text": "@dev Returns the next interest rate for the market.\n @param prevRate The current interest rate.\n @param totalAvailable The current available liquidity.\n @param totalLoan The current outstanding loan.\n @param timePast The time past since last interest rate rebase in seconds."
+            },
+            "functionSelector": "fae7f00d",
+            "id": 8742,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getNextInterestRate",
+            "nameLocation": "540:19:37",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 8738,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 8731,
+                  "mutability": "mutable",
+                  "name": "prevRate",
+                  "nameLocation": "571:8:37",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 8742,
+                  "src": "566:13:37",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 8730,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "566:4:37",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 8733,
+                  "mutability": "mutable",
+                  "name": "totalAvailable",
+                  "nameLocation": "591:14:37",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 8742,
+                  "src": "586:19:37",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 8732,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "586:4:37",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 8735,
+                  "mutability": "mutable",
+                  "name": "totalLoan",
+                  "nameLocation": "617:9:37",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 8742,
+                  "src": "612:14:37",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 8734,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "612:4:37",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 8737,
+                  "mutability": "mutable",
+                  "name": "timePast",
+                  "nameLocation": "638:8:37",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 8742,
+                  "src": "633:13:37",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 8736,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "633:4:37",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "559:92:37"
+            },
+            "returnParameters": {
+              "id": 8741,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 8740,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 8742,
+                  "src": "675:4:37",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 8739,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "675:4:37",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "674:6:37"
+            },
+            "scope": 8743,
+            "src": "531:150:37",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "scope": 8744,
+        "src": "64:620:37",
+        "usedErrors": []
+      }
+    ],
+    "src": "38:648:37"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.8.6+commit.11564f7e.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.4.4",
+  "updatedAt": "2022-03-11T09:19:49.217Z",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {
+      "getNextInterestRate(uint256,uint256,uint256,uint256)": {
+        "details": "Returns the next interest rate for the market.",
+        "params": {
+          "prevRate": "The current interest rate.",
+          "timePast": "The time past since last interest rate rebase in seconds.",
+          "totalAvailable": "The current available liquidity.",
+          "totalLoan": "The current outstanding loan."
+        }
+      },
+      "initialRate()": {
+        "details": "Returns the initial interest rate per year (times 1e18)."
+      }
+    },
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  }
+}

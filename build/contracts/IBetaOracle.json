@@ -1,0 +1,916 @@
+{
+  "contractName": "IBetaOracle",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "token",
+          "type": "address"
+        }
+      ],
+      "name": "getAssetETHPrice",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "token",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "getAssetETHValue",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "from",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "to",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "convert",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.8.6+commit.11564f7e\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"address\",\"name\":\"from\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"convert\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"token\",\"type\":\"address\"}],\"name\":\"getAssetETHPrice\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"token\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"getAssetETHValue\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{\"convert(address,address,uint256)\":{\"details\":\"Returns the conversion from amount of from` to `to`.\",\"params\":{\"amount\":\"The amount of token for conversion.\",\"from\":\"The source token to convert.\",\"to\":\"The destination token to convert.\"}},\"getAssetETHPrice(address)\":{\"details\":\"Returns the given asset price in ETH (wei), multiplied by 2**112.\",\"params\":{\"token\":\"The token to query for asset price\"}},\"getAssetETHValue(address,uint256)\":{\"details\":\"Returns the given asset value in ETH (wei)\",\"params\":{\"amount\":\"The amount of token to query\",\"token\":\"The token to query for asset value\"}}},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/interfaces/IBetaOracle.sol\":\"IBetaOracle\"},\"evmVersion\":\"berlin\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":1},\"remappings\":[]},\"sources\":{\"project:/interfaces/IBetaOracle.sol\":{\"keccak256\":\"0xab62d390a481629ef8e82a0cbd0fa4cc7ac18192a772226cbfe3ab4b0556e88b\",\"license\":\"BUSL-1.1\",\"urls\":[\"bzz-raw://c510e3886ee076c7d4a97dd2451489dd5374df86ca9dc15acd28083a09783eb2\",\"dweb:/ipfs/QmSVFgxuxP9meMBFeAFx6WV3dhVSVgqz6iajzGKckjkmC4\"]}},\"version\":1}",
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "immutableReferences": {},
+  "generatedSources": [],
+  "deployedGeneratedSources": [],
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "// SPDX-License-Identifier: BUSL-1.1\r\npragma solidity 0.8.6;\r\n\r\ninterface IBetaOracle {\r\n  /// @dev Returns the given asset price in ETH (wei), multiplied by 2**112.\r\n  /// @param token The token to query for asset price\r\n  function getAssetETHPrice(address token) external returns (uint);\r\n\r\n  /// @dev Returns the given asset value in ETH (wei)\r\n  /// @param token The token to query for asset value\r\n  /// @param amount The amount of token to query\r\n  function getAssetETHValue(address token, uint amount) external returns (uint);\r\n\r\n  /// @dev Returns the conversion from amount of from` to `to`.\r\n  /// @param from The source token to convert.\r\n  /// @param to The destination token to convert.\r\n  /// @param amount The amount of token for conversion.\r\n  function convert(\r\n    address from,\r\n    address to,\r\n    uint amount\r\n  ) external returns (uint);\r\n}\r\n",
+  "sourcePath": "C:\\Users\\HP\\PoolContract\\interfaces\\IBetaOracle.sol",
+  "ast": {
+    "absolutePath": "project:/interfaces/IBetaOracle.sol",
+    "exportedSymbols": {
+      "IBetaOracle": [
+        8776
+      ]
+    },
+    "id": 8777,
+    "license": "BUSL-1.1",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 8745,
+        "literals": [
+          "solidity",
+          "0.8",
+          ".6"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "38:22:38"
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "fullyImplemented": false,
+        "id": 8776,
+        "linearizedBaseContracts": [
+          8776
+        ],
+        "name": "IBetaOracle",
+        "nameLocation": "74:11:38",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "documentation": {
+              "id": 8746,
+              "nodeType": "StructuredDocumentation",
+              "src": "91:129:38",
+              "text": "@dev Returns the given asset price in ETH (wei), multiplied by 2**112.\n @param token The token to query for asset price"
+            },
+            "functionSelector": "d4f4dfe4",
+            "id": 8753,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getAssetETHPrice",
+            "nameLocation": "233:16:38",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 8749,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 8748,
+                  "mutability": "mutable",
+                  "name": "token",
+                  "nameLocation": "258:5:38",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 8753,
+                  "src": "250:13:38",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 8747,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "250:7:38",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "249:15:38"
+            },
+            "returnParameters": {
+              "id": 8752,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 8751,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 8753,
+                  "src": "283:4:38",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 8750,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "283:4:38",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "282:6:38"
+            },
+            "scope": 8776,
+            "src": "224:65:38",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "documentation": {
+              "id": 8754,
+              "nodeType": "StructuredDocumentation",
+              "src": "295:156:38",
+              "text": "@dev Returns the given asset value in ETH (wei)\n @param token The token to query for asset value\n @param amount The amount of token to query"
+            },
+            "functionSelector": "bd424684",
+            "id": 8763,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getAssetETHValue",
+            "nameLocation": "464:16:38",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 8759,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 8756,
+                  "mutability": "mutable",
+                  "name": "token",
+                  "nameLocation": "489:5:38",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 8763,
+                  "src": "481:13:38",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 8755,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "481:7:38",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 8758,
+                  "mutability": "mutable",
+                  "name": "amount",
+                  "nameLocation": "501:6:38",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 8763,
+                  "src": "496:11:38",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 8757,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "496:4:38",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "480:28:38"
+            },
+            "returnParameters": {
+              "id": 8762,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 8761,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 8763,
+                  "src": "527:4:38",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 8760,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "527:4:38",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "526:6:38"
+            },
+            "scope": 8776,
+            "src": "455:78:38",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "documentation": {
+              "id": 8764,
+              "nodeType": "StructuredDocumentation",
+              "src": "539:217:38",
+              "text": "@dev Returns the conversion from amount of from` to `to`.\n @param from The source token to convert.\n @param to The destination token to convert.\n @param amount The amount of token for conversion."
+            },
+            "functionSelector": "248391ff",
+            "id": 8775,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "convert",
+            "nameLocation": "769:7:38",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 8771,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 8766,
+                  "mutability": "mutable",
+                  "name": "from",
+                  "nameLocation": "791:4:38",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 8775,
+                  "src": "783:12:38",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 8765,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "783:7:38",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 8768,
+                  "mutability": "mutable",
+                  "name": "to",
+                  "nameLocation": "810:2:38",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 8775,
+                  "src": "802:10:38",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 8767,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "802:7:38",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 8770,
+                  "mutability": "mutable",
+                  "name": "amount",
+                  "nameLocation": "824:6:38",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 8775,
+                  "src": "819:11:38",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 8769,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "819:4:38",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "776:59:38"
+            },
+            "returnParameters": {
+              "id": 8774,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 8773,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 8775,
+                  "src": "854:4:38",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 8772,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "854:4:38",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "853:6:38"
+            },
+            "scope": 8776,
+            "src": "760:100:38",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "scope": 8777,
+        "src": "64:799:38",
+        "usedErrors": []
+      }
+    ],
+    "src": "38:827:38"
+  },
+  "legacyAST": {
+    "absolutePath": "project:/interfaces/IBetaOracle.sol",
+    "exportedSymbols": {
+      "IBetaOracle": [
+        8776
+      ]
+    },
+    "id": 8777,
+    "license": "BUSL-1.1",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 8745,
+        "literals": [
+          "solidity",
+          "0.8",
+          ".6"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "38:22:38"
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "fullyImplemented": false,
+        "id": 8776,
+        "linearizedBaseContracts": [
+          8776
+        ],
+        "name": "IBetaOracle",
+        "nameLocation": "74:11:38",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "documentation": {
+              "id": 8746,
+              "nodeType": "StructuredDocumentation",
+              "src": "91:129:38",
+              "text": "@dev Returns the given asset price in ETH (wei), multiplied by 2**112.\n @param token The token to query for asset price"
+            },
+            "functionSelector": "d4f4dfe4",
+            "id": 8753,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getAssetETHPrice",
+            "nameLocation": "233:16:38",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 8749,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 8748,
+                  "mutability": "mutable",
+                  "name": "token",
+                  "nameLocation": "258:5:38",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 8753,
+                  "src": "250:13:38",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 8747,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "250:7:38",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "249:15:38"
+            },
+            "returnParameters": {
+              "id": 8752,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 8751,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 8753,
+                  "src": "283:4:38",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 8750,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "283:4:38",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "282:6:38"
+            },
+            "scope": 8776,
+            "src": "224:65:38",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "documentation": {
+              "id": 8754,
+              "nodeType": "StructuredDocumentation",
+              "src": "295:156:38",
+              "text": "@dev Returns the given asset value in ETH (wei)\n @param token The token to query for asset value\n @param amount The amount of token to query"
+            },
+            "functionSelector": "bd424684",
+            "id": 8763,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getAssetETHValue",
+            "nameLocation": "464:16:38",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 8759,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 8756,
+                  "mutability": "mutable",
+                  "name": "token",
+                  "nameLocation": "489:5:38",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 8763,
+                  "src": "481:13:38",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 8755,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "481:7:38",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 8758,
+                  "mutability": "mutable",
+                  "name": "amount",
+                  "nameLocation": "501:6:38",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 8763,
+                  "src": "496:11:38",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 8757,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "496:4:38",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "480:28:38"
+            },
+            "returnParameters": {
+              "id": 8762,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 8761,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 8763,
+                  "src": "527:4:38",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 8760,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "527:4:38",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "526:6:38"
+            },
+            "scope": 8776,
+            "src": "455:78:38",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "documentation": {
+              "id": 8764,
+              "nodeType": "StructuredDocumentation",
+              "src": "539:217:38",
+              "text": "@dev Returns the conversion from amount of from` to `to`.\n @param from The source token to convert.\n @param to The destination token to convert.\n @param amount The amount of token for conversion."
+            },
+            "functionSelector": "248391ff",
+            "id": 8775,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "convert",
+            "nameLocation": "769:7:38",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 8771,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 8766,
+                  "mutability": "mutable",
+                  "name": "from",
+                  "nameLocation": "791:4:38",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 8775,
+                  "src": "783:12:38",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 8765,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "783:7:38",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 8768,
+                  "mutability": "mutable",
+                  "name": "to",
+                  "nameLocation": "810:2:38",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 8775,
+                  "src": "802:10:38",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 8767,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "802:7:38",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 8770,
+                  "mutability": "mutable",
+                  "name": "amount",
+                  "nameLocation": "824:6:38",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 8775,
+                  "src": "819:11:38",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 8769,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "819:4:38",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "776:59:38"
+            },
+            "returnParameters": {
+              "id": 8774,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 8773,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 8775,
+                  "src": "854:4:38",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 8772,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "854:4:38",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "853:6:38"
+            },
+            "scope": 8776,
+            "src": "760:100:38",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "scope": 8777,
+        "src": "64:799:38",
+        "usedErrors": []
+      }
+    ],
+    "src": "38:827:38"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.8.6+commit.11564f7e.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.4.4",
+  "updatedAt": "2022-03-11T09:19:49.222Z",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {
+      "convert(address,address,uint256)": {
+        "details": "Returns the conversion from amount of from` to `to`.",
+        "params": {
+          "amount": "The amount of token for conversion.",
+          "from": "The source token to convert.",
+          "to": "The destination token to convert."
+        }
+      },
+      "getAssetETHPrice(address)": {
+        "details": "Returns the given asset price in ETH (wei), multiplied by 2**112.",
+        "params": {
+          "token": "The token to query for asset price"
+        }
+      },
+      "getAssetETHValue(address,uint256)": {
+        "details": "Returns the given asset value in ETH (wei)",
+        "params": {
+          "amount": "The amount of token to query",
+          "token": "The token to query for asset value"
+        }
+      }
+    },
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  }
+}
