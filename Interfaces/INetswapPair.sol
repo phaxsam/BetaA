@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: BUSL-1.1
 pragma solidity 0.8.6;
 
-interface IUniswapV2Pair {
+interface INetswapPair {
   function getReserves()
     external
     view

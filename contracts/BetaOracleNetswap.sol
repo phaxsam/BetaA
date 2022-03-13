@@ -1,12 +1,12 @@
 // SPDX-License-Identifier: BUSL-1.1
 pragma solidity 0.8.6;
 
-import '../interfaces/IUniswapV2Factory.sol';
-import '../interfaces/IUniswapV2Pair.sol';
+import '../interfaces/INetswapFactory.sol';
+import '../interfaces/INetswapPair.sol';
 import '../interfaces/IExternalOracle.sol';
 import '../interfaces/IBetaOracle.sol';
 
-contract BetaOracleUniswapV2 is IBetaOracle {
+contract BetaOracleNetswap is IBetaOracle {
   event SetGovernor(address governor);
   event SetPendingGovernor(address pendingGovernor);
   event Initialize(address token);
@@ -79,7 +79,7 @@ contract BetaOracleUniswapV2 is IBetaOracle {
   function initPriceFromPair(address token) public {
     Observation storage obs = observations[token];
     require(obs.timestamp == 0, 'initPriceFromPair/already-initialized');
-    address pair = IUniswapV2Factory(factory).getPair(token, weth);
+    address pair = INetswapFactory(factory).getPair(token, weth);
     obs.lastCumu = token < weth ? currentPrice0Cumu(pair) : currentPrice1Cumu(pair);
     obs.lastPrice = 0;
     obs.timestamp = uint32(block.timestamp);
@@ -107,7 +107,7 @@ contract BetaOracleUniswapV2 is IBetaOracle {
         require(lastPrice > 0, 'updatePriceFromPair/no-price');
         return lastPrice;
       }
-      address pair = IUniswapV2Factory(factory).getPair(token, weth);
+      address pair = INetswapFactory(factory).getPair(token, weth);
       uint currCumu = token < weth ? currentPrice0Cumu(pair) : currentPrice1Cumu(pair);
       uint224 price = uint224((currCumu - obs.lastCumu) / timeElapsed); // overflow is desired
       obs.lastPrice = price;
@@ -138,7 +138,7 @@ contract BetaOracleUniswapV2 is IBetaOracle {
     }
     address ext = exts[token];
     if (ext != address(0)) {
-      return IExternalOracle(ext).getETHPx(token);
+      return IExternalOracle(ext).getETHPx(token); 
     }
     return updatePriceFromPair(token);
   }
@@ -169,9 +169,9 @@ contract BetaOracleUniswapV2 is IBetaOracle {
   /// @param pair The uniswap pair to query for price0 cumulative value.
   function currentPrice0Cumu(address pair) public view returns (uint price0Cumu) {
     uint32 currTime = uint32(block.timestamp);
-    price0Cumu = IUniswapV2Pair(pair).price0CumulativeLast();
+    price0Cumu = INetswapPair(pair).price0CumulativeLast();
     // can use reserves without flash-manipulated risks because cumu changes if reserves change
-    (uint reserve0, uint reserve1, uint32 lastTime) = IUniswapV2Pair(pair).getReserves();
+    (uint reserve0, uint reserve1, uint32 lastTime) = INetswapPair(pair).getReserves();
     if (lastTime != currTime) {
       unchecked {
         uint32 timeElapsed = currTime - lastTime; // overflow is desired
@@ -184,9 +184,9 @@ contract BetaOracleUniswapV2 is IBetaOracle {
   /// @param pair The uniswap pair to query for price1 cumulative value.
   function currentPrice1Cumu(address pair) public view returns (uint price1Cumu) {
     uint32 currTime = uint32(block.timestamp);
-    price1Cumu = IUniswapV2Pair(pair).price1CumulativeLast();
+    price1Cumu = INetswapPair(pair).price1CumulativeLast();
     // can use reserves without flash-manipulated risks because cumu changes if reserves change
-    (uint reserve0, uint reserve1, uint32 lastTime) = IUniswapV2Pair(pair).getReserves();
+    (uint reserve0, uint reserve1, uint32 lastTime) = INetswapPair(pair).getReserves();
     if (lastTime != currTime) {
       unchecked {
         uint32 timeElapsed = currTime - lastTime; // overflow is desired
